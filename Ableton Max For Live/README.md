@@ -3,7 +3,7 @@
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
-Repository for br.freezex.1.1, with all related filtes, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
+Repository for br.freezex.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
 Additional programs can be found here: [https://github.com/guaguanco127/plugins](https://github.com/guaguanco127/plugins)
 
 These files were created with Max/MSP version 8.5.6. 
@@ -45,7 +45,7 @@ Copy and paste br.freezex.1.1.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
-4. Also, copy and paste the file called solofreeze.pfft into the same folder. If this file is already there, then there is no reason to copy and paste it. **The device will not work without this file.**    
+4. Also, copy and paste the file called br.solofreeze.pfft into the same folder. If this file is already there, then there is no reason to copy and paste it. **The device will not work without this file.**    
   
 5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 

@@ -44,11 +44,11 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 2. Copy and paste br.freezex.abs.1.1.maxpat inside of the same folder as the Max patch you are using. 
 
-3. Also, copy and paste the file called solofreeze.pfft into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
+3. Also, copy and paste the file called br.solofreeze.pfft into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
 
 4. In the Max patch you are using, create an object called br.freezex.abs.1.1 
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.freezex.maxpat located within the same folder as your project. 
+5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.freezex.abs.1.1.maxpat located within the same folder as your project. 
 
 
 ## <a name="Use"></a>How To Use
