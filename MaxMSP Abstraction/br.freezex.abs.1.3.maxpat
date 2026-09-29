@@ -2331,337 +2331,546 @@
 										},
 										"classnamespace": "box",
 										"rect": [
-											0.0,
-											0.0,
-											640.0,
-											480.0
-										],
-										"gridsize": [
-											15.0,
-											15.0
+											100.0,
+											100.0,
+											820.0,
+											380.0
 										],
 										"boxes": [
 											{
 												"box": {
-													"id": "obj-36",
-													"maxclass": "newobj",
-													"numinlets": 2,
-													"numoutlets": 1,
-													"outlettype": [
-														"signal"
-													],
+													"id": "d-in1",
+													"maxclass": "inlet",
 													"patching_rect": [
 														50.0,
-														100.0,
-														39.0,
-														22.0
+														30.0,
+														30.0,
+														30.0
 													],
-													"text": "gate~"
-												}
-											},
-											{
-												"box": {
-													"id": "obj-35",
-													"maxclass": "newobj",
-													"numinlets": 2,
+													"numinlets": 0,
 													"numoutlets": 1,
 													"outlettype": [
 														""
 													],
-													"patching_rect": [
-														66.33333333333326,
-														297.0,
-														80.0,
-														22.0
-													],
-													"text": "speedlim 100"
+													"comment": "Detect on/off (Int)"
 												}
 											},
 											{
 												"box": {
-													"id": "obj-76",
-													"maxclass": "newobj",
-													"numinlets": 3,
-													"numoutlets": 4,
-													"outlettype": [
-														"signal",
-														"signal",
-														"signal",
-														"signal"
+													"id": "d-in2",
+													"maxclass": "inlet",
+													"patching_rect": [
+														250.0,
+														30.0,
+														30.0,
+														30.0
 													],
+													"numinlets": 0,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"comment": "Input signal"
+												}
+											},
+											{
+												"box": {
+													"id": "d-in3",
+													"maxclass": "inlet",
+													"patching_rect": [
+														350.0,
+														30.0,
+														30.0,
+														30.0
+													],
+													"numinlets": 0,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"comment": "1 - Sensitivity (Float) 0 - 1"
+												}
+											},
+											{
+												"box": {
+													"id": "d-m1",
+													"maxclass": "message",
 													"patching_rect": [
 														50.0,
-														197.0,
-														68.0,
+														80.0,
+														62.0,
 														22.0
 													],
-													"text": "svf~ 30 0.1"
+													"numinlets": 2,
+													"numoutlets": 1,
+													"text": "detect $1",
+													"outlettype": [
+														""
+													]
 												}
 											},
 											{
 												"box": {
-													"id": "obj-69",
+													"id": "d-ex",
+													"maxclass": "newobj",
+													"patching_rect": [
+														350.0,
+														80.0,
+														260.0,
+														22.0
+													],
+													"numinlets": 1,
+													"numoutlets": 1,
+													"text": "expr 3. + 21. * pow(min(max($f1\\, 0.)\\, 1.)\\, 2.)",
+													"outlettype": [
+														""
+													]
+												}
+											},
+											{
+												"box": {
+													"id": "d-m2",
+													"maxclass": "message",
+													"patching_rect": [
+														350.0,
+														115.0,
+														64.0,
+														22.0
+													],
+													"numinlets": 2,
+													"numoutlets": 1,
+													"text": "sensdb $1",
+													"outlettype": [
+														""
+													]
+												}
+											},
+											{
+												"box": {
+													"id": "d-gen",
 													"maxclass": "newobj",
 													"numinlets": 2,
+													"numoutlets": 1,
+													"outlettype": [
+														"signal"
+													],
+													"patcher": {
+														"fileversion": 1,
+														"appversion": {
+															"major": 9,
+															"minor": 1,
+															"revision": 4,
+															"architecture": "x64",
+															"modernui": 1
+														},
+														"classnamespace": "dsp.gen",
+														"rect": [
+															100.0,
+															100.0,
+															680.0,
+															720.0
+														],
+														"boxes": [
+															{
+																"box": {
+																	"id": "obj-1",
+																	"maxclass": "newobj",
+																	"numinlets": 0,
+																	"numoutlets": 1,
+																	"outlettype": [
+																		""
+																	],
+																	"patching_rect": [
+																		20.0,
+																		20.0,
+																		30.0,
+																		22.0
+																	],
+																	"text": "in 1"
+																}
+															},
+															{
+																"box": {
+																	"id": "obj-2",
+																	"maxclass": "newobj",
+																	"numinlets": 0,
+																	"numoutlets": 1,
+																	"outlettype": [
+																		""
+																	],
+																	"patching_rect": [
+																		80.0,
+																		20.0,
+																		30.0,
+																		22.0
+																	],
+																	"text": "in 2"
+																}
+															},
+															{
+																"box": {
+																	"code": "// onset detector: one trigger per attack. A fast envelope (5 ms release) must rise above a slow one\n// (100 ms) by 'sensdb' dB; it re-arms once the fast envelope settles back (hysteresis = half the dB),\n// with a 50 ms lockout. in1/in2 = dry input L/R. out1 = 1 from the attack until re-armed (-> edge~).\nParam detect(0, min=0, max=1);\nParam sensdb(9, min=3, max=24);\nHistory fe(0);\nHistory se(0);\nHistory arm(1);\nHistory lk(0);\nf = fe;\nsl = se;\nar = arm;\nk = lk;\nlvl = 0;\nrise = 1;\nif (detect > 0.5) {\n    lvl = max(abs(in1), abs(in2));\n    f = max(lvl, f * exp(-1 / mstosamps(5)));\n    sl = sl + (f - sl) * (1 - exp(-1 / mstosamps(100)));\n    rise = dbtoa(sensdb);\n    k = max(k - 1, 0);\n    if (ar > 0.5) {\n        if (f > sl * rise && f > 0.003 && k <= 0) {\n            ar = 0;\n            k = mstosamps(50);\n        }\n    } else if (f < sl * sqrt(rise)) {\n        ar = 1;\n    }\n} else {\n    f = 0;\n    sl = 0;\n    ar = 1;\n    k = 0;\n}\nfe = f;\nse = sl;\narm = ar;\nlk = k;\nout1 = 1 - ar;\n",
+																	"fontface": 0,
+																	"fontname": "<Monospaced>",
+																	"fontsize": 12.0,
+																	"id": "obj-4",
+																	"maxclass": "codebox",
+																	"numinlets": 2,
+																	"numoutlets": 1,
+																	"outlettype": [
+																		""
+																	],
+																	"patching_rect": [
+																		20.0,
+																		60.0,
+																		620.0,
+																		560.0
+																	]
+																}
+															},
+															{
+																"box": {
+																	"id": "obj-5",
+																	"maxclass": "newobj",
+																	"numinlets": 1,
+																	"numoutlets": 0,
+																	"patching_rect": [
+																		20.0,
+																		640.0,
+																		35.0,
+																		22.0
+																	],
+																	"text": "out 1"
+																}
+															}
+														],
+														"lines": [
+															{
+																"patchline": {
+																	"destination": [
+																		"obj-4",
+																		0
+																	],
+																	"source": [
+																		"obj-1",
+																		0
+																	]
+																}
+															},
+															{
+																"patchline": {
+																	"destination": [
+																		"obj-4",
+																		1
+																	],
+																	"source": [
+																		"obj-2",
+																		0
+																	]
+																}
+															},
+															{
+																"patchline": {
+																	"destination": [
+																		"obj-5",
+																		0
+																	],
+																	"source": [
+																		"obj-4",
+																		0
+																	]
+																}
+															}
+														]
+													},
+													"patching_rect": [
+														250.0,
+														160.0,
+														200.0,
+														22.0
+													],
+													"text": "gen~ @title br.delay.pitch.onset",
+													"varname": "gen~_onset"
+												}
+											},
+											{
+												"box": {
+													"id": "d-edge",
+													"maxclass": "newobj",
+													"patching_rect": [
+														250.0,
+														200.0,
+														45.0,
+														22.0
+													],
+													"numinlets": 1,
 													"numoutlets": 2,
+													"text": "edge~",
 													"outlettype": [
 														"bang",
-														""
-													],
-													"patching_rect": [
-														66.33333333333326,
-														472.0,
-														36.0,
-														22.0
-													],
-													"text": "sel 1"
+														"bang"
+													]
 												}
 											},
 											{
 												"box": {
-													"id": "obj-68",
+													"id": "d-pipe",
 													"maxclass": "newobj",
+													"patching_rect": [
+														250.0,
+														240.0,
+														55.0,
+														22.0
+													],
 													"numinlets": 2,
 													"numoutlets": 1,
+													"text": "pipe 65",
 													"outlettype": [
+														""
+													]
+												}
+											},
+											{
+												"box": {
+													"id": "d-lb",
+													"maxclass": "newobj",
+													"patching_rect": [
+														450.0,
+														200.0,
+														58.0,
+														22.0
+													],
+													"numinlets": 1,
+													"numoutlets": 1,
+													"text": "loadbang",
+													"outlettype": [
+														"bang"
+													]
+												}
+											},
+											{
+												"box": {
+													"id": "d-ds",
+													"maxclass": "newobj",
+													"patching_rect": [
+														450.0,
+														230.0,
+														70.0,
+														22.0
+													],
+													"numinlets": 1,
+													"numoutlets": 4,
+													"text": "dspstate~",
+													"outlettype": [
+														"int",
+														"float",
+														"int",
 														"int"
-													],
-													"patching_rect": [
-														66.33333333333326,
-														417.0,
-														36.0,
-														22.0
-													],
-													"text": "> 0.5"
+													]
 												}
 											},
 											{
 												"box": {
-													"id": "obj-47",
+													"id": "d-cap",
 													"maxclass": "newobj",
+													"patching_rect": [
+														450.0,
+														260.0,
+														190.0,
+														22.0
+													],
 													"numinlets": 2,
 													"numoutlets": 1,
-													"outlettype": [
-														"float"
-													],
-													"patching_rect": [
-														66.33333333333326,
-														244.0,
-														84.0,
-														22.0
-													],
-													"text": "peakamp~ 25"
-												}
-											},
-											{
-												"box": {
-													"id": "obj-32",
-													"maxclass": "newobj",
-													"numinlets": 2,
-													"numoutlets": 1,
-													"outlettype": [
-														"signal"
-													],
-													"patching_rect": [
-														50.0,
-														156.0,
-														40.0,
-														22.0
-													],
-													"text": "*~ 0.7"
-												}
-											},
-											{
-												"box": {
-													"comment": "",
-													"id": "obj-49",
-													"index": 1,
-													"maxclass": "inlet",
-													"numinlets": 0,
-													"numoutlets": 1,
+													"text": "expr (2560. + $f2) / $f1 * 1000.",
 													"outlettype": [
 														""
-													],
-													"patching_rect": [
-														50.0,
-														40.0,
-														30.0,
-														30.0
 													]
 												}
 											},
 											{
 												"box": {
-													"comment": "",
-													"id": "obj-50",
-													"index": 2,
-													"maxclass": "inlet",
-													"numinlets": 0,
-													"numoutlets": 1,
-													"outlettype": [
-														""
-													],
-													"patching_rect": [
-														85.0,
-														40.0,
-														30.0,
-														30.0
-													]
-												}
-											},
-											{
-												"box": {
-													"comment": "",
-													"id": "obj-51",
-													"index": 3,
-													"maxclass": "inlet",
-													"numinlets": 0,
-													"numoutlets": 1,
-													"outlettype": [
-														""
-													],
-													"patching_rect": [
-														120.0,
-														40.0,
-														30.0,
-														30.0
-													]
-												}
-											},
-											{
-												"box": {
-													"comment": "",
-													"id": "obj-52",
-													"index": 1,
+													"id": "d-out",
 													"maxclass": "outlet",
+													"patching_rect": [
+														250.0,
+														290.0,
+														30.0,
+														30.0
+													],
 													"numinlets": 1,
 													"numoutlets": 0,
+													"comment": "Bang per attack (after the capture delay)"
+												}
+											},
+											{
+												"box": {
+													"id": "d-cm",
+													"maxclass": "comment",
 													"patching_rect": [
-														66.33337400000005,
-														554.0,
+														450.0,
 														30.0,
-														30.0
-													]
+														330.0,
+														60.0
+													],
+													"numinlets": 1,
+													"numoutlets": 0,
+													"text": "Onset detector: one trigger per attack (a fast envelope jumping above a slow one by the Sensitivity amount, 3-24 dB), not every 100 ms while loud. The pipe waits the capture time, so the frozen frame holds the attack rather than the sound just before it."
 												}
 											}
 										],
 										"lines": [
 											{
 												"patchline": {
-													"destination": [
-														"obj-76",
+													"source": [
+														"d-in1",
 														0
 													],
-													"source": [
-														"obj-32",
+													"destination": [
+														"d-m1",
 														0
 													]
 												}
 											},
 											{
 												"patchline": {
-													"destination": [
-														"obj-68",
+													"source": [
+														"d-m1",
 														0
 													],
-													"source": [
-														"obj-35",
+													"destination": [
+														"d-gen",
 														0
 													]
 												}
 											},
 											{
 												"patchline": {
-													"destination": [
-														"obj-32",
+													"source": [
+														"d-in2",
 														0
 													],
-													"source": [
-														"obj-36",
+													"destination": [
+														"d-gen",
 														0
 													]
 												}
 											},
 											{
 												"patchline": {
-													"destination": [
-														"obj-35",
+													"source": [
+														"d-in3",
 														0
 													],
-													"source": [
-														"obj-47",
+													"destination": [
+														"d-ex",
 														0
 													]
 												}
 											},
 											{
 												"patchline": {
-													"destination": [
-														"obj-36",
+													"source": [
+														"d-ex",
 														0
 													],
-													"source": [
-														"obj-49",
+													"destination": [
+														"d-m2",
 														0
 													]
 												}
 											},
 											{
 												"patchline": {
+													"source": [
+														"d-m2",
+														0
+													],
 													"destination": [
-														"obj-36",
+														"d-gen",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"source": [
+														"d-gen",
+														0
+													],
+													"destination": [
+														"d-edge",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"source": [
+														"d-edge",
+														0
+													],
+													"destination": [
+														"d-pipe",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"source": [
+														"d-pipe",
+														0
+													],
+													"destination": [
+														"d-out",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"source": [
+														"d-lb",
+														0
+													],
+													"destination": [
+														"d-ds",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"source": [
+														"d-ds",
 														1
 													],
-													"source": [
-														"obj-50",
+													"destination": [
+														"d-cap",
 														0
 													]
 												}
 											},
 											{
 												"patchline": {
+													"source": [
+														"d-ds",
+														2
+													],
 													"destination": [
-														"obj-68",
+														"d-cap",
 														1
-													],
-													"source": [
-														"obj-51",
-														0
 													]
 												}
 											},
 											{
 												"patchline": {
-													"destination": [
-														"obj-69",
+													"source": [
+														"d-cap",
 														0
 													],
-													"source": [
-														"obj-68",
-														0
-													]
-												}
-											},
-											{
-												"patchline": {
 													"destination": [
-														"obj-52",
-														0
-													],
-													"source": [
-														"obj-69",
-														0
-													]
-												}
-											},
-											{
-												"patchline": {
-													"destination": [
-														"obj-47",
-														0
-													],
-													"source": [
-														"obj-76",
+														"d-pipe",
 														1
 													]
 												}
@@ -4790,7 +4999,7 @@
 			},
 			{
 				"box": {
-					"comment": "Sensitivity (Float) 0 - 1. Default 0.5",
+					"comment": "Sensitivity (Float) 0 - 1, higher = softer attacks trigger a freeze. Default 0.5",
 					"id": "obj-24",
 					"index": 8,
 					"maxclass": "inlet",
