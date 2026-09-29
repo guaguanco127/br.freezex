@@ -1,25 +1,35 @@
-# Max/MSP Abstraction: br.freezex.abs.1.1  
+# Max/MSP Abstraction: br.freezex.abs.1.2  
    
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
-Repository for br.freezex.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
+Repository for br.freezex.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
 Additional programs can be found here: [https://github.com/guaguanco127/plugins](https://github.com/guaguanco127/plugins)
 
-These files were created with Max/MSP version 8.5.6. 
+Version 1.2 was updated with Max 9. Version 1.1 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [About](#About)   
 [What is an abstraction?](#Abstraction)  
 [How To Install](#Install)  
-[How To Use](#Use) 
+[How To Use](#Use)  
+[Version History](#Version) 
  
  
+
+## What's New in 1.2
+
+- **Much lower CPU.** The spectral processing now switches itself off completely while the freeze is bypassed, and back on the moment you freeze. Resting CPU dropped to about 1%, and about 4% while freezing.
+- **Smooth bloom into the freeze.** Turning the freeze on keeps the dry sound playing until the first frozen sound arrives, then crossfades from the dry sound into the freeze over the Crossfade time. Turning it off crossfades straight back to the dry sound, with no gap.
+- **Fresher freezes at any sample rate.** The moment a freeze is captured is now worked out from the sample rate, so each freeze contains only sound from after you pressed it.
+- **Lighter transient detector** (it polls the input less often; detection speed is unchanged).
+- Retrigger and Transient Detect still capture the exact moment they fire.
 
 ## <a name="About"></a>About
 
-This is a spectral Max/MSP abstraction that allows the user to do a spectral freeze of a stereo signal. Additionally, a transient detector option is available. This contains all features available within the br.freeze.1.1 patches, except this version allows the user to crossfade into the next freeze between 50 ms and 10 seconds.
+This is a spectral Max/MSP abstraction that allows the user to do a spectral freeze of a stereo signal. Additionally, a transient detector option is available. This contains all features available within [br.freeze](https://github.com/guaguanco127/br.freeze), except this version allows the user to crossfade into the next freeze between 50 ms and 10 seconds.
 
 Currently works in any sample rate or bit depth.
 
@@ -40,43 +50,39 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 ## <a name="Install"></a>How To Install
 
-1. Make sure you have Max/MSP 8 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
+1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.freezex.abs.1.1.maxpat inside of the same folder as the Max patch you are using. 
+2. Copy and paste br.freezex.abs.1.2.maxpat inside of the same folder as the Max patch you are using. 
 
 3. Also, copy and paste the file called br.solofreeze.pfft into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**     
 
-4. In the Max patch you are using, create an object called br.freezex.abs.1.1 
+4. In the Max patch you are using, create an object called br.freezex.abs.1.2 
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.freezex.abs.1.1.maxpat located within the same folder as your project. 
+5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.freezex.abs.1.2.maxpat located within the same folder as your project. 
 
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. 
+The first two inlets are for the left and the right stereo signals. The two outlets are the left and right outputs.
 
-The 3rd inlet turns the effect on and off. Once it turns on it freezes the stereo signal at that moment. It takes an integer, 0 = bypass, 1 = freeze. When a freeze is turned on, it will fade in from silence at the rate of the crossfade time.       
+Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
 
-The 4th inlet can receive a bang message to freeze another moment while the freeze is currently on. This feature does not work while the freeze is on bypass mode. 
+| Inlet | Control | Type | Range | Default |
+|---|---|---|---|---|
+| 1 | Left audio in | Signal | | |
+| 2 | Right audio in | Signal | | |
+| 3 | Freeze | Int | 0 = Bypass, 1 = Freeze | 0 |
+| 4 | Retrigger | Bang |  |  |
+| 5 | Crossfade | Float | 50 - 10000 ms | 2500 |
+| 6 | Mix Mode | Int | 0 = Insert, 1 = Gate | 0 |
+| 7 | Transient Detect | Int | 0 = Off, 1 = On | 0 |
+| 8 | Sensitivity | Float | 0 - 1 | 0.5 |
 
-The 5th inlet is the crossfade time. It takes a float. The minimum is 50 ms, the maximum is 10,000 ms. When the freeze effect is on, and the retrigger receives a bang message, the next freeze will crossfade in at the perscribed duration. However, an additional freeze cannot be retriggered until the crossfade is complete. 
+Turning the freeze on crossfades from the dry sound into the freeze over the Crossfade time. Retrigger freezes a new moment while the freeze is on and crossfades into it over the Crossfade time; another retrigger can't happen until that crossfade is complete. Retrigger does nothing while bypassed. Transient detections cannot occur faster than 100 ms.
 
-The 6th inlet is the mix mode. It takes an integer, 0 = insert, while interrupts the dry signal and replaces it with the freeze when activated. 1 = gate, which means the dry signal is never heard while in bypass mode. 
+Double click on the object and you can see inside of the object. This way you can study how it was built.
 
-The 7th inlet turns the transient detector on and off. It takes an integer, 0 = off, 1 = on. Detections cannot occur faster than 100 ms. 
+## <a name="Version"></a>Version History  
 
-The 8th inlet is the transident detect sensitivity. It takes a float between 0.0 and 1.0. 0 is no sensitivity, 1 is full sensitivity. 
-
-Double click on the object and you can see inside of the object. This way you can study how it was built. 
-
-   
-    
-
-
-
- 
-
-
-
-
-
+Version 1.2 lowered CPU use (the spectral processing switches off while bypassed), made turning the freeze on and off gap-free (on crossfades from the dry sound over the Crossfade time), timed each freeze from the sample rate, and lightened the transient detector.  
+Version 1.1 fixed an issue with stereo and using multiple instances of the abstraction
