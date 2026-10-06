@@ -83,3 +83,7 @@ Version 1.4 added Feedback: each new freeze can blend with the current one (up t
 Version 1.3 replaced the transient detector with an attack (onset) detector: one freeze per attack, held notes stay frozen, and each automatic freeze holds the attack.  
 Version 1.2 lowered CPU use (the spectral processing switches off while bypassed), made turning the freeze on and off gap-free, and timed each freeze from the sample rate.  
 Version 1.1 fixed an issue with stereo and using multiple instances of the abstraction.
+
+## <a name="Credits"></a>Credits
+
+The spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from "A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.
