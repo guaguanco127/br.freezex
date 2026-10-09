@@ -1,6 +1,6 @@
 {
 	"patcher": {
-"description" : "br.solofreezex.pfft.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+"description" : "br.solofreezex.pfft.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
 		"fileversion": 1,
 		"appversion": {
 			"major": 9,
@@ -21,7 +21,7 @@
 			15.0
 		],
 		"boxes": [
-{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [640.0, 0.0, 520.0, 140.0], "text": "br.solofreezex.pfft.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.", "linecount": 2}},
+{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [640.0, 0.0, 520.0, 140.0], "text": "br.solofreezex.pfft.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.", "linecount": 2}},
 
 			{
 				"box": {
