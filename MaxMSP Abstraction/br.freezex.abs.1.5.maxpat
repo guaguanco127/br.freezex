@@ -1,6 +1,5 @@
 {
     "patcher": {
-"description" : "br.freezex.abs.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
         "fileversion": 1,
         "appversion": {
             "major": 9,
@@ -13,15 +12,89 @@
         "openrect": [
             34.0,
             87.0,
-            127.0,
-            167.0
+            307.0,
+            465.0
         ],
         "openrectmode": 0,
         "openinpresentation": 1,
-        "devicewidth": 127.0,
+        "devicewidth": 307.0,
+        "description": "br.freezex.abs.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
         "boxes": [
-{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [690.0, 0.0, 520.0, 140.0], "text": "br.freezex.abs.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.", "linecount": 2}},
-
+            {
+                "box": {
+                    "activeneedlecolor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "id": "obj-dw-dial",
+                    "maxclass": "live.dial",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "",
+                        "float"
+                    ],
+                    "parameter_enable": 1,
+                    "patching_rect": [
+                        725.0,
+                        133.0,
+                        27.0,
+                        48.0
+                    ],
+                    "presentation": 1,
+                    "presentation_rect": [
+                        7.0,
+                        130.0000011920929,
+                        51.0,
+                        48.0
+                    ],
+                    "saved_attribute_attributes": {
+                        "activeneedlecolor": {
+                            "expression": ""
+                        },
+                        "textcolor": {
+                            "expression": ""
+                        },
+                        "valueof": {
+                            "parameter_initial": [
+                                100.0
+                            ],
+                            "parameter_initial_enable": 1,
+                            "parameter_longname": "Dry/Wet",
+                            "parameter_mmax": 100.0,
+                            "parameter_modmode": 0,
+                            "parameter_shortname": "Dry/Wet",
+                            "parameter_type": 0,
+                            "parameter_unitstyle": 5
+                        }
+                    },
+                    "textcolor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "varname": "Dry/Wet"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-signature",
+                    "linecount": 7,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [
+                        900.0,
+                        0.0,
+                        520.0,
+                        100.0
+                    ],
+                    "text": "br.freezex.abs.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan."
+                }
+            },
             {
                 "box": {
                     "activeneedlecolor": [
@@ -48,7 +121,7 @@
                     "presentation": 1,
                     "presentation_rect": [
                         62.5,
-                        109.0,
+                        130.0000011920929,
                         51.0,
                         48.0
                     ],
@@ -85,7 +158,7 @@
                 "box": {
                     "id": "obj-1",
                     "maxclass": "newobj",
-                    "numinlets": 9,
+                    "numinlets": 10,
                     "numoutlets": 2,
                     "outlettype": [
                         "signal",
@@ -110,7 +183,9 @@
                         "boxes": [
                             {
                                 "box": {
-                                    "id": "obj-3", "hint" : "br.freezex.abs.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.", "annotation" : "br.freezex.abs.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-François Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+                                    "annotation": "br.freezex.abs.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+                                    "hint": "br.freezex.abs.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Insert/Gate, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+                                    "id": "obj-3",
                                     "maxclass": "message",
                                     "numinlets": 2,
                                     "numoutlets": 1,
@@ -173,7 +248,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        ""
+                                        "float"
                                     ],
                                     "patching_rect": [
                                         879.0,
@@ -383,7 +458,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        ""
+                                                        "float"
                                                     ],
                                                     "patching_rect": [
                                                         791.0,
@@ -937,7 +1012,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        ""
+                                                        "int"
                                                     ],
                                                     "patching_rect": [
                                                         315.5,
@@ -956,7 +1031,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        "signal"
+                                                        ""
                                                     ],
                                                     "patching_rect": [
                                                         223.0,
@@ -975,7 +1050,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        "signal"
+                                                        ""
                                                     ],
                                                     "patching_rect": [
                                                         350.5,
@@ -1386,7 +1461,6 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 12.0,
                                                     "id": "obj-3022",
-                                                    "linecount": 2,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
@@ -1407,7 +1481,6 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 12.0,
                                                     "id": "obj-3023",
-                                                    "linecount": 2,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
@@ -2790,7 +2863,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        ""
+                                                        "int"
                                                     ],
                                                     "patching_rect": [
                                                         50.0,
@@ -2809,7 +2882,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        "signal"
+                                                        ""
                                                     ],
                                                     "patching_rect": [
                                                         250.0,
@@ -3339,7 +3412,7 @@
                                 "box": {
                                     "id": "obj-48",
                                     "maxclass": "newobj",
-                                    "numinlets": 5,
+                                    "numinlets": 6,
                                     "numoutlets": 2,
                                     "outlettype": [
                                         "signal",
@@ -3591,7 +3664,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        "signal"
+                                                        ""
                                                     ],
                                                     "patching_rect": [
                                                         50.0,
@@ -3610,7 +3683,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        "signal"
+                                                        ""
                                                     ],
                                                     "patching_rect": [
                                                         125.25,
@@ -3629,7 +3702,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        ""
+                                                        "int"
                                                     ],
                                                     "patching_rect": [
                                                         160.25,
@@ -3648,7 +3721,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [
-                                                        ""
+                                                        "int"
                                                     ],
                                                     "patching_rect": [
                                                         294.0,
@@ -3707,6 +3780,105 @@
                                                         30.0,
                                                         30.0
                                                     ]
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "comment": "Dry amount while frozen (Signal, from Dry/Wet)",
+                                                    "id": "obj-dw-amt",
+                                                    "index": 6,
+                                                    "maxclass": "inlet",
+                                                    "numinlets": 0,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        "signal"
+                                                    ],
+                                                    "patching_rect": [
+                                                        480.0,
+                                                        40.0,
+                                                        30.0,
+                                                        30.0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "obj-dw-inv",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        "signal"
+                                                    ],
+                                                    "patching_rect": [
+                                                        17.0,
+                                                        555.0,
+                                                        50.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "!-~ 1."
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "obj-dw-g",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        "signal"
+                                                    ],
+                                                    "patching_rect": [
+                                                        17.0,
+                                                        585.0,
+                                                        30.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "*~"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "obj-dw-dL",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        "signal"
+                                                    ],
+                                                    "patching_rect": [
+                                                        -43.0,
+                                                        615.0,
+                                                        30.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "*~"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "obj-dw-dR",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        "signal"
+                                                    ],
+                                                    "patching_rect": [
+                                                        17.0,
+                                                        615.0,
+                                                        30.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "*~"
                                                 }
                                             }
                                         ],
@@ -3863,6 +4035,20 @@
                                                         "obj-4",
                                                         0
                                                     ],
+                                                    "order": 0,
+                                                    "source": [
+                                                        "obj-41",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-dw-dL",
+                                                        0
+                                                    ],
+                                                    "order": 1,
                                                     "source": [
                                                         "obj-41",
                                                         0
@@ -3875,6 +4061,20 @@
                                                         "obj-2",
                                                         0
                                                     ],
+                                                    "order": 0,
+                                                    "source": [
+                                                        "obj-42",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-dw-dR",
+                                                        0
+                                                    ],
+                                                    "order": 1,
                                                     "source": [
                                                         "obj-42",
                                                         0
@@ -3934,6 +4134,19 @@
                                             {
                                                 "patchline": {
                                                     "destination": [
+                                                        "obj-dw-inv",
+                                                        0
+                                                    ],
+                                                    "order": 2,
+                                                    "source": [
+                                                        "obj-6",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
                                                         "obj-12",
                                                         0
                                                     ],
@@ -3953,6 +4166,80 @@
                                                     "order": 0,
                                                     "source": [
                                                         "obj-7",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-dw-g",
+                                                        1
+                                                    ],
+                                                    "source": [
+                                                        "obj-dw-amt",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-45",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "obj-dw-dL",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-46",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "obj-dw-dR",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-dw-dL",
+                                                        1
+                                                    ],
+                                                    "order": 1,
+                                                    "source": [
+                                                        "obj-dw-g",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-dw-dR",
+                                                        1
+                                                    ],
+                                                    "order": 0,
+                                                    "source": [
+                                                        "obj-dw-g",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "obj-dw-g",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "obj-dw-inv",
                                                         0
                                                     ]
                                                 }
@@ -3995,7 +4282,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        ""
+                                        "float"
                                     ],
                                     "patching_rect": [
                                         1539.0,
@@ -4032,7 +4319,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        ""
+                                        "int"
                                     ],
                                     "patching_rect": [
                                         1359.5,
@@ -4051,7 +4338,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        ""
+                                        "int"
                                     ],
                                     "patching_rect": [
                                         1027.5,
@@ -4125,7 +4412,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        ""
+                                        "int"
                                     ],
                                     "patching_rect": [
                                         711.666656,
@@ -4144,7 +4431,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        "signal"
+                                        ""
                                     ],
                                     "patching_rect": [
                                         531.0,
@@ -4163,7 +4450,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        "signal"
+                                        ""
                                     ],
                                     "patching_rect": [
                                         633.0,
@@ -4438,7 +4725,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [
-                                        ""
+                                        "float"
                                     ],
                                     "patching_rect": [
                                         1700.0,
@@ -4466,6 +4753,206 @@
                                         22.0
                                     ],
                                     "text": "* 0.5"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "comment": "Dry/Wet (Float) 0 - 100 %, heard only while frozen: 100 = only the freeze (as 1.4), lower keeps the dry playing under the freeze (equal power). Default 100",
+                                    "id": "obj-dw-in",
+                                    "index": 10,
+                                    "maxclass": "inlet",
+                                    "numinlets": 0,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        "float"
+                                    ],
+                                    "patching_rect": [
+                                        1810.0,
+                                        37.0,
+                                        30.0,
+                                        30.0
+                                    ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-t",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [
+                                        "float",
+                                        "float"
+                                    ],
+                                    "patching_rect": [
+                                        1810.0,
+                                        90.0,
+                                        40.0,
+                                        22.0
+                                    ],
+                                    "text": "t f f"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-sin",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        1870.0,
+                                        125.0,
+                                        280.0,
+                                        22.0
+                                    ],
+                                    "text": "expr sin(min(max($f1\\, 0.)\\, 100.) * 0.015707963)"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-cos",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        1810.0,
+                                        160.0,
+                                        280.0,
+                                        22.0
+                                    ],
+                                    "text": "expr cos(min(max($f1\\, 0.)\\, 100.) * 0.015707963)"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-wm",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        1870.0,
+                                        195.0,
+                                        45.0,
+                                        22.0
+                                    ],
+                                    "text": "$1 20"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-dm",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        1810.0,
+                                        230.0,
+                                        45.0,
+                                        22.0
+                                    ],
+                                    "text": "$1 20"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-wl",
+                                    "maxclass": "newobj",
+                                    "numinlets": 2,
+                                    "numoutlets": 2,
+                                    "outlettype": [
+                                        "signal",
+                                        "bang"
+                                    ],
+                                    "patching_rect": [
+                                        1870.0,
+                                        265.0,
+                                        55.0,
+                                        22.0
+                                    ],
+                                    "text": "line~ 1."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-dl",
+                                    "maxclass": "newobj",
+                                    "numinlets": 2,
+                                    "numoutlets": 2,
+                                    "outlettype": [
+                                        "signal",
+                                        "bang"
+                                    ],
+                                    "patching_rect": [
+                                        1810.0,
+                                        300.0,
+                                        55.0,
+                                        22.0
+                                    ],
+                                    "text": "line~ 0."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-note",
+                                    "linecount": 4,
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        1940.0,
+                                        255.0,
+                                        300.0,
+                                        62.0
+                                    ],
+                                    "text": "Dry/Wet (equal power): wet amount scales the freeze envelope; dry amount x (1 - dry fade) adds the dry back only while frozen, so bypass (Insert dry / Gate silence) is unchanged and 100 % = 1.4."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-dw-wmul",
+                                    "maxclass": "newobj",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        "signal"
+                                    ],
+                                    "patching_rect": [
+                                        1155.0,
+                                        865.0,
+                                        30.0,
+                                        22.0
+                                    ],
+                                    "text": "*~"
                                 }
                             }
                         ],
@@ -4533,23 +5020,9 @@
                             {
                                 "patchline": {
                                     "destination": [
-                                        "obj-20",
-                                        1
-                                    ],
-                                    "order": 1,
-                                    "source": [
-                                        "obj-22",
+                                        "obj-dw-wmul",
                                         0
-                                    ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [
-                                        "obj-21",
-                                        1
                                     ],
-                                    "order": 0,
                                     "source": [
                                         "obj-22",
                                         0
@@ -4597,7 +5070,7 @@
                                     "midpoints": [
                                         721.166656,
                                         119.5,
-                                        90.25,
+                                        87.1,
                                         119.5
                                     ],
                                     "order": 3,
@@ -4692,7 +5165,7 @@
                                     "midpoints": [
                                         642.5,
                                         121.5,
-                                        82.375,
+                                        80.8,
                                         121.5
                                     ],
                                     "order": 2,
@@ -4779,7 +5252,7 @@
                                     "midpoints": [
                                         1037.0,
                                         119.5,
-                                        98.125,
+                                        93.4,
                                         119.5
                                     ],
                                     "source": [
@@ -5137,12 +5610,146 @@
                                         0
                                     ]
                                 }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-dm",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-cos",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-48",
+                                        5
+                                    ],
+                                    "source": [
+                                        "obj-dw-dl",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-dl",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-dm",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-t",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-in",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-wm",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-sin",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-cos",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-t",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-sin",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-t",
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-wmul",
+                                        1
+                                    ],
+                                    "source": [
+                                        "obj-dw-wl",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-dw-wl",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-dw-wm",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-20",
+                                        1
+                                    ],
+                                    "order": 1,
+                                    "source": [
+                                        "obj-dw-wmul",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "obj-21",
+                                        1
+                                    ],
+                                    "order": 0,
+                                    "source": [
+                                        "obj-dw-wmul",
+                                        0
+                                    ]
+                                }
                             }
                         ]
                     },
                     "patching_rect": [
                         64.5,
-                        244.0,
+                        344.0,
                         92.5,
                         22.0
                     ],
@@ -5174,8 +5781,8 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        -1.5,
-                        109.0,
+                        0.0,
+                        80.0000011920929,
                         65.0,
                         48.0
                     ],
@@ -5192,7 +5799,7 @@
                                 2500
                             ],
                             "parameter_initial_enable": 1,
-                            "parameter_longname": "live.dial[1]",
+                            "parameter_longname": "Crossfade",
                             "parameter_mmax": 10000.0,
                             "parameter_mmin": 50.0,
                             "parameter_modmode": 0,
@@ -5207,7 +5814,7 @@
                         1.0,
                         1.0
                     ],
-                    "varname": "live.dial[1]"
+                    "varname": "Crossfade"
                 }
             },
             {
@@ -5236,7 +5843,7 @@
                     "presentation": 1,
                     "presentation_rect": [
                         55.5,
-                        56.0,
+                        80.0000011920929,
                         65.0,
                         48.0
                     ],
@@ -5252,7 +5859,7 @@
                                 0.5
                             ],
                             "parameter_initial_enable": 1,
-                            "parameter_longname": "live.dial",
+                            "parameter_longname": "Sensitivity",
                             "parameter_mmax": 1.0,
                             "parameter_modmode": 0,
                             "parameter_shortname": "Sensitivity",
@@ -5266,7 +5873,7 @@
                         1.0,
                         1.0
                     ],
-                    "varname": "live.dial"
+                    "varname": "Sensitivity"
                 }
             },
             {
@@ -5295,7 +5902,7 @@
                     "presentation": 1,
                     "presentation_rect": [
                         60.0,
-                        28.0,
+                        52.60000018775463,
                         56.0,
                         23.0
                     ],
@@ -5308,7 +5915,7 @@
                                 "val1",
                                 "val2"
                             ],
-                            "parameter_longname": "live.text[2]",
+                            "parameter_longname": "Detect",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -5317,7 +5924,7 @@
                     },
                     "text": "Detect_off",
                     "texton": "Detect_on",
-                    "varname": "live.text[2]"
+                    "varname": "Detect"
                 }
             },
             {
@@ -5345,10 +5952,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        60.0,
-                        3.0,
-                        56.0,
-                        24.0
+                        60.00000089406967,
+                        3.200000047683716,
+                        56.00000083446503,
+                        46.299999952316284
                     ],
                     "saved_attribute_attributes": {
                         "activebgoncolor": {
@@ -5359,7 +5966,7 @@
                                 "val1",
                                 "val2"
                             ],
-                            "parameter_longname": "live.text[1]",
+                            "parameter_longname": "Mix Mode",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -5368,7 +5975,7 @@
                     },
                     "text": "Insert",
                     "texton": "Gate",
-                    "varname": "live.text[1]"
+                    "varname": "Mix Mode"
                 }
             },
             {
@@ -5385,9 +5992,9 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        4.0,
-                        50.0,
-                        58.0,
+                        3.6000000536441803,
+                        29.5,
+                        61.39999994635582,
                         20.0
                     ],
                     "text": "Retrigger",
@@ -5418,10 +6025,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        14.5,
-                        70.0,
-                        36.0,
-                        34.0
+                        18.499999791383743,
+                        51.5,
+                        28.000000417232513,
+                        25.200000375509262
                     ],
                     "saved_attribute_attributes": {
                         "valueof": {
@@ -5429,14 +6036,14 @@
                                 "off",
                                 "on"
                             ],
-                            "parameter_longname": "live.button",
+                            "parameter_longname": "Retrigger",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.button",
                             "parameter_type": 2
                         }
                     },
-                    "varname": "live.button"
+                    "varname": "Retrigger"
                 }
             },
             {
@@ -5464,10 +6071,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        4.0,
-                        3.0,
-                        54.0,
-                        48.0
+                        4.000000059604645,
+                        3.200000047683716,
+                        54.000000804662704,
+                        23.799999952316284
                     ],
                     "saved_attribute_attributes": {
                         "activebgoncolor": {
@@ -5478,7 +6085,7 @@
                                 "val1",
                                 "val2"
                             ],
-                            "parameter_longname": "live.text",
+                            "parameter_longname": "Freeze",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -5487,14 +6094,14 @@
                     },
                     "text": "Bypass",
                     "texton": "Freeze",
-                    "varname": "live.text"
+                    "varname": "Freeze"
                 }
             },
             {
                 "box": {
                     "comment": "Crossfade (Float) 50 - 10000 ms. Default 2500",
                     "id": "obj-12",
-                    "index": 5,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5513,7 +6120,7 @@
                 "box": {
                     "comment": "Sensitivity (Float) 0 - 1, higher = softer attacks trigger a freeze. Default 0.5",
                     "id": "obj-24",
-                    "index": 8,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5532,7 +6139,7 @@
                 "box": {
                     "comment": "Transient Detect (Int) 0 = Off, 1 = On. Default 0",
                     "id": "obj-25",
-                    "index": 7,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5551,7 +6158,7 @@
                 "box": {
                     "comment": "Mix Mode (Int) 0 = Insert, 1 = Gate. Default 0",
                     "id": "obj-10",
-                    "index": 6,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5570,7 +6177,7 @@
                 "box": {
                     "comment": "Retrigger (Bang)",
                     "id": "obj-38",
-                    "index": 4,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5589,7 +6196,7 @@
                 "box": {
                     "comment": "Freeze (Int) 0 = Bypass, 1 = Freeze. Default 0",
                     "id": "obj-37",
-                    "index": 3,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5608,12 +6215,12 @@
                 "box": {
                     "comment": "Right Signal In",
                     "id": "obj-36",
-                    "index": 2,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [
-                        "signal"
+                        ""
                     ],
                     "patching_rect": [
                         82.0,
@@ -5627,12 +6234,12 @@
                 "box": {
                     "comment": "Left Signal In",
                     "id": "obj-35",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [
-                        "signal"
+                        ""
                     ],
                     "patching_rect": [
                         43.0,
@@ -5644,15 +6251,15 @@
             },
             {
                 "box": {
-                    "comment": "",
+                    "comment": "Right Signal Out",
                     "id": "obj-34",
-                    "index": 2,
+                    "index": 0,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
                         119.0,
-                        319.0,
+                        419.0,
                         30.0,
                         30.0
                     ]
@@ -5660,15 +6267,15 @@
             },
             {
                 "box": {
-                    "comment": "",
+                    "comment": "Left Signal Out",
                     "id": "obj-33",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
                         34.0,
-                        319.0,
+                        419.0,
                         30.0,
                         30.0
                     ]
@@ -5696,16 +6303,16 @@
                     "numoutlets": 0,
                     "patching_rect": [
                         200.33333337306976,
-                        297.0,
+                        397.0,
                         128.0,
                         128.0
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        -0.5,
+                        -0.4000000059604645,
                         0.0,
-                        282.8783781528473,
-                        169.0
+                        135.60000202059746,
+                        191.60000285506248
                     ],
                     "proportion": 0.39,
                     "rounded": 0
@@ -5715,7 +6322,7 @@
                 "box": {
                     "comment": "Feedback (Float) 0 - 1: 0 = new sound replaces the freeze (as 1.3), 1 = 50/50 blend of current freeze + new sound on each Retrigger/Detect. Default 0",
                     "id": "obj-39",
-                    "index": 9,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -5728,6 +6335,500 @@
                         30.0,
                         30.0
                     ]
+                }
+            },
+            {
+                "box": {
+                    "comment": "State: each setting as <name> <value> the moment it changes (freeze, crossfade, mode, detect, sensitivity, feedback, drywet). Retrigger is an action, not a setting, so it is not sent.",
+                    "id": "obj-state-out",
+                    "index": 0,
+                    "maxclass": "outlet",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [
+                        800.0,
+                        419.0,
+                        30.0,
+                        30.0
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-freeze",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        103.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t i i"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-freeze",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        103.0,
+                        220.0,
+                        58.0,
+                        22.0
+                    ],
+                    "text": "change 0"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-freeze",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        103.0,
+                        245.0,
+                        122.0,
+                        22.0
+                    ],
+                    "text": "prepend freeze"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-crossfade",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "float",
+                        "float"
+                    ],
+                    "patching_rect": [
+                        266.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t f f"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-crossfade",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        266.0,
+                        220.0,
+                        62.0,
+                        22.0
+                    ],
+                    "text": "change 0."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-crossfade",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        266.0,
+                        270.0,
+                        146.0,
+                        22.0
+                    ],
+                    "text": "prepend crossfade"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-mode",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        430.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t i i"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-mode",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        430.0,
+                        220.0,
+                        58.0,
+                        22.0
+                    ],
+                    "text": "change 0"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-mode",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        430.0,
+                        245.0,
+                        106.0,
+                        22.0
+                    ],
+                    "text": "prepend mode"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-detect",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        505.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t i i"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-detect",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        505.0,
+                        220.0,
+                        58.0,
+                        22.0
+                    ],
+                    "text": "change 0"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-detect",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        505.0,
+                        270.0,
+                        122.0,
+                        22.0
+                    ],
+                    "text": "prepend detect"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-sensitivity",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "float",
+                        "float"
+                    ],
+                    "patching_rect": [
+                        572.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t f f"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-sensitivity",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        572.0,
+                        220.0,
+                        62.0,
+                        22.0
+                    ],
+                    "text": "change 0."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-sensitivity",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        572.0,
+                        245.0,
+                        162.0,
+                        22.0
+                    ],
+                    "text": "prepend sensitivity"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-feedback",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "float",
+                        "float"
+                    ],
+                    "patching_rect": [
+                        650.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t f f"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-feedback",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        650.0,
+                        220.0,
+                        62.0,
+                        22.0
+                    ],
+                    "text": "change 0."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-feedback",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        650.0,
+                        270.0,
+                        138.0,
+                        22.0
+                    ],
+                    "text": "prepend feedback"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-note",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [
+                        840.0,
+                        419.0,
+                        263.0,
+                        47.0
+                    ],
+                    "text": "State outlet: each control -> t (engine first) -> change -> prepend <name>. Inlet numbers and dial moves are both reported."
+                }
+            },
+            {
+                "box": {
+                    "comment": "Dry/Wet (Float) 0 - 100 %, heard only while frozen: 100 = only the freeze (as 1.4), lower keeps the dry playing under the freeze (equal power). Default 100",
+                    "id": "obj-dw-top-in",
+                    "index": 0,
+                    "maxclass": "inlet",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        725.0,
+                        45.0,
+                        30.0,
+                        30.0
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-t-drywet",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "float",
+                        "float"
+                    ],
+                    "patching_rect": [
+                        725.0,
+                        195.0,
+                        40.0,
+                        22.0
+                    ],
+                    "text": "t f f"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-c-drywet",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "int",
+                        "int"
+                    ],
+                    "patching_rect": [
+                        725.0,
+                        220.0,
+                        62.0,
+                        22.0
+                    ],
+                    "text": "change 0."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-st-p-drywet",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        725.0,
+                        295.0,
+                        122.0,
+                        22.0
+                    ],
+                    "text": "prepend drywet"
                 }
             }
         ],
@@ -5783,8 +6884,8 @@
             {
                 "patchline": {
                     "destination": [
-                        "obj-1",
-                        5
+                        "obj-st-t-mode",
+                        0
                     ],
                     "source": [
                         "obj-15",
@@ -5795,8 +6896,8 @@
             {
                 "patchline": {
                     "destination": [
-                        "obj-1",
-                        6
+                        "obj-st-t-detect",
+                        0
                     ],
                     "source": [
                         "obj-16",
@@ -5807,8 +6908,8 @@
             {
                 "patchline": {
                     "destination": [
-                        "obj-1",
-                        7
+                        "obj-st-t-sensitivity",
+                        0
                     ],
                     "source": [
                         "obj-17",
@@ -5819,8 +6920,8 @@
             {
                 "patchline": {
                     "destination": [
-                        "obj-1",
-                        4
+                        "obj-st-t-crossfade",
+                        0
                     ],
                     "source": [
                         "obj-19",
@@ -5927,11 +7028,287 @@
             {
                 "patchline": {
                     "destination": [
-                        "obj-1",
-                        2
+                        "obj-st-t-freeze",
+                        0
                     ],
                     "source": [
                         "obj-4",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-t-feedback",
+                        0
+                    ],
+                    "source": [
+                        "obj-40",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-t-drywet",
+                        0
+                    ],
+                    "source": [
+                        "obj-dw-dial",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-dw-dial",
+                        0
+                    ],
+                    "source": [
+                        "obj-dw-top-in",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-crossfade",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-crossfade",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-detect",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-detect",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-drywet",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-drywet",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-feedback",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-feedback",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-freeze",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-freeze",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-mode",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-mode",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-p-sensitivity",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-c-sensitivity",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-crossfade",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-detect",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-drywet",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-feedback",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-freeze",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-mode",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-state-out",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-p-sensitivity",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-1",
+                        4
+                    ],
+                    "source": [
+                        "obj-st-t-crossfade",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-crossfade",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-crossfade",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-1",
+                        6
+                    ],
+                    "source": [
+                        "obj-st-t-detect",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-detect",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-detect",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-1",
+                        9
+                    ],
+                    "source": [
+                        "obj-st-t-drywet",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-drywet",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-drywet",
                         0
                     ]
                 }
@@ -5943,11 +7320,165 @@
                         8
                     ],
                     "source": [
-                        "obj-40",
+                        "obj-st-t-feedback",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-feedback",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-feedback",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-1",
+                        2
+                    ],
+                    "source": [
+                        "obj-st-t-freeze",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-freeze",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-freeze",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-1",
+                        5
+                    ],
+                    "source": [
+                        "obj-st-t-mode",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-mode",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-mode",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-1",
+                        7
+                    ],
+                    "source": [
+                        "obj-st-t-sensitivity",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [
+                        "obj-st-c-sensitivity",
+                        0
+                    ],
+                    "source": [
+                        "obj-st-t-sensitivity",
                         0
                     ]
                 }
             }
-        ]
+        ],
+        "parameters": {
+            "obj-15": [
+                "Mix Mode",
+                "live.text",
+                0
+            ],
+            "obj-16": [
+                "Detect",
+                "live.text",
+                0
+            ],
+            "obj-17": [
+                "Sensitivity",
+                "Sensitivity",
+                0
+            ],
+            "obj-19": [
+                "Crossfade",
+                "Crossfade",
+                0
+            ],
+            "obj-2": [
+                "Retrigger",
+                "live.button",
+                0
+            ],
+            "obj-4": [
+                "Freeze",
+                "live.text",
+                0
+            ],
+            "obj-40": [
+                "Feedback",
+                "Feedback",
+                0
+            ],
+            "obj-dw-dial": [
+                "Dry/Wet",
+                "Dry/Wet",
+                0
+            ],
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-"
+                    ],
+                    "buttons": [
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-",
+                        "-"
+                    ]
+                }
+            },
+            "inherited_shortname": 1
+        },
+        "autosave": 0
     }
 }
