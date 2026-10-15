@@ -1,8 +1,8 @@
 # Ableton Max for Live device: br.freezex.1.6  
    
 By Brian Riordan  
-[guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
-[brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
+guaguanco127 [at] gmail [dot] com  
+brianriordanmusic [at] gmail [dot] com  
 Repository for br.freezex.1.6, with all related files, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
