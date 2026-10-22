@@ -1,15 +1,16 @@
-# Ableton Max for Live device: br.freezex.1.6  
+# Ableton Max for Live device: br.freezex.1.7  
    
 By Brian Riordan  
 guaguanco127 [at] gmail [dot] com  
 brianriordanmusic [at] gmail [dot] com  
-Repository for br.freezex.1.6, with all related files, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
+Repository for br.freezex.1.7, with all related files, can be found here: [https://github.com/guaguanco127/br.freezex](https://github.com/guaguanco127/br.freezex)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Versions 1.2 through 1.6 were updated with Max 9. Version 1.1 was created with Max/MSP 8.5.6. 
+Versions 1.2 through 1.7 were updated with Max 9. Version 1.1 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.7](#whats-new-in-17)  
 [What's New in 1.6](#whats-new-in-16)  
 [What's New in 1.5](#whats-new-in-15)  
 [What's New in 1.4](#whats-new-in-14)  
@@ -18,6 +19,11 @@ Versions 1.2 through 1.6 were updated with Max 9. Version 1.1 was created with M
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.7
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.7, including the helper files. Nothing changed in the sound.
 
 ## What's New in 1.6
 
@@ -56,7 +62,7 @@ This is a spectral Max/MSP abstraction, and Ableton Max for Live device that all
 
 Currently works in any sample rate or bit depth.
 
-Only works as an abstraction or a device. External objects and RNBO not available yet. An extremely important file is included in each folder called "br.solofreezex.pfft.1.4" do not move or delete this file until you follow all instructions for installation. 
+Only works as an abstraction or a device. External objects and RNBO not available yet. An extremely important file is included in each folder called "br.solofreezex.pfft.1.7" do not move or delete this file until you follow all instructions for installation. 
   
 **Freeze:** On/Off, Bypass or Freeze.  
 **Retrigger:** When the freeze is on, this will freeze the current stereo signal.  
@@ -78,19 +84,20 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 
 2. For Macintosh:  
 Go to your user folder  
-Then Music > Ableton > User Library > Presets > Audio Effects  
-Copy and paste br.freezex.1.6.amxd into that folder
+Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
+Copy and paste br.freezex.1.7.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
 
-4. Also, copy and paste the file called br.solofreezex.pfft.1.4 into the same folder. If this file is already there, then there is no reason to copy and paste it. **The device will not work without this file.**    
-  
-5. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
+4. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
-6. Either double click on the device, or drag/drop it onto the track where you wish to use it.
+5. Either double click on the device, or drag/drop it onto the track where you wish to use it.
+
+**The device is frozen:** its helper files are inside the .amxd, so no other files are needed.
 
 ## <a name="Version"></a>Version History  
 
+Version 1.7 (10-21-2026) froze the Max for Live device and gave every file in the repository the same version number.  
 Version 1.6 (10-09-2026) renamed Mix Mode to Thru / Aux.  
 Version 1.5 added Dry/Wet (only while frozen).  
 Version 1.4 added Feedback: each new freeze can blend with the current one (up to 50/50) instead of replacing it.  
