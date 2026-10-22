@@ -18,7 +18,7 @@
         "openrectmode": 0,
         "openinpresentation": 1,
         "devicewidth": 307.0,
-        "description": "br.freezex.abs.1.6 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+        "description": "br.freezex.abs.1.7 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
         "boxes": [
             {
                 "box": {
@@ -92,7 +92,7 @@
                         520.0,
                         100.0
                     ],
-                    "text": "br.freezex.abs.1.6 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan."
+                    "text": "br.freezex.abs.1.7 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan."
                 }
             },
             {
@@ -183,8 +183,8 @@
                         "boxes": [
                             {
                                 "box": {
-                                    "annotation": "br.freezex.abs.1.6 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
-                                    "hint": "br.freezex.abs.1.6 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+                                    "annotation": "br.freezex.abs.1.7 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
+                                    "hint": "br.freezex.abs.1.7 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: the spectral freeze is built on Jean-Fran\u00e7ois Charles' freeze-frame technique (one FFT frame captured with jit.catch~ inside pfft~), from \"A Tutorial on Spectral Sound Processing Using Max/MSP and Jitter\", Computer Music Journal 32(3), 2008. Crossfading between freezes, Thru/Aux, the attack detector, Feedback blending and the low-CPU switching are by Brian Riordan.",
                                     "id": "obj-3",
                                     "maxclass": "message",
                                     "numinlets": 2,
@@ -740,7 +740,7 @@
                                                         175.0,
                                                         22.0
                                                     ],
-                                                    "text": "pfft~ br.solofreezex.pfft.1.4 2048 4"
+                                                    "text": "pfft~ br.solofreezex.pfft.1.7 2048 4"
                                                 }
                                             },
                                             {
@@ -760,7 +760,7 @@
                                                         164.0,
                                                         22.0
                                                     ],
-                                                    "text": "pfft~ br.solofreezex.pfft.1.4 2048 4"
+                                                    "text": "pfft~ br.solofreezex.pfft.1.7 2048 4"
                                                 }
                                             },
                                             {
@@ -980,7 +980,7 @@
                                                         164.0,
                                                         22.0
                                                     ],
-                                                    "text": "pfft~ br.solofreezex.pfft.1.4 2048 4"
+                                                    "text": "pfft~ br.solofreezex.pfft.1.7 2048 4"
                                                 }
                                             },
                                             {
@@ -1000,7 +1000,7 @@
                                                         164.0,
                                                         22.0
                                                     ],
-                                                    "text": "pfft~ br.solofreezex.pfft.1.4 2048 4"
+                                                    "text": "pfft~ br.solofreezex.pfft.1.7 2048 4"
                                                 }
                                             },
                                             {
